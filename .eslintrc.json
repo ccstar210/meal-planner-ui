@@ -11,7 +11,10 @@
   },
   "plugins": ["react", "prettier"],
   "rules": {
-    "prettier/prettier": ["error", { "singleQuote": true }],
+    "prettier/prettier": [
+      "error",
+      { "singleQuote": true, "endOfLine": "auto" }
+    ],
     "react/jsx-uses-react": ["off"],
     "react/react-in-jsx-scope": ["off"]
   }
