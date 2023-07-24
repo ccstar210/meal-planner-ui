@@ -8,10 +8,10 @@ export default function NavBar() {
     <Flex
       as="nav"
       px="20px"
-      py="10px"
       bg="orange.500"
       alignItems="center"
       color="white"
+      h="70px"
     >
       <HStack spacing="20px" alignItems="center">
         <CalendarIcon boxSize="2em" />
