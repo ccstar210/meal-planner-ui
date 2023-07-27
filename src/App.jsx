@@ -6,15 +6,16 @@ import Inventory from './pages/Inventory';
 import Grocery from './pages/Grocery';
 import Recipes from './pages/Recipes';
 import NavBar from './components/layouts/NavBar';
-import Sidebar from './components/Sidebar';
+import Sidebar from './components/layouts/Sidebar';
+import Footer from './components/layouts/Footer';
 
 function App() {
   return (
     <Grid
       bg="yellow.50"
       minHeight="100vh"
-      gridTemplateRows="70px auto"
-      gridTemplateColumns="300px auto"
+      gridTemplateRows="auto 1fr auto"
+      gridTemplateColumns="auto 1fr"
     >
       <GridItem as="nav" colSpan="2">
         <NavBar />
@@ -31,6 +32,9 @@ function App() {
           <Route path="/recipes" element={<Recipes />} />
           <Route path="*" element={<div>Not found</div>} />
         </Routes>
+      </GridItem>
+      <GridItem as="footer" colSpan="2">
+        <Footer />
       </GridItem>
     </Grid>
   );
