@@ -12,7 +12,7 @@ import Footer from './components/layouts/Footer';
 function App() {
   return (
     <Grid
-      bg="yellow.50"
+      bg="orange.100"
       minHeight="100vh"
       gridTemplateRows="auto 1fr auto"
       gridTemplateColumns="auto 1fr"
