@@ -1,33 +1,29 @@
 import { CloseIcon } from '@chakra-ui/icons';
 import {
+  Checkbox,
   HStack,
   List,
   ListIcon,
   ListItem,
   Spacer,
-  Text,
 } from '@chakra-ui/react';
 import PropTypes from 'prop-types';
 
-export default function GroceryList({
-  groceryList,
-  handleCheck,
-  handleDelete,
-}) {
+export default function GroceryList({ groceryList, onCheck, onDelete }) {
   const listItems = groceryList.map((grocery) => (
     <ListItem p="1em" bg="white" key={grocery.id}>
       <HStack>
-        <Text
-          cursor="pointer"
-          onClick={() => {
-            handleCheck(grocery.id);
+        <Checkbox
+          colorScheme="orange"
+          defaultChecked={grocery.checked}
+          onChange={() => {
+            onCheck(grocery.id);
           }}
-          textDecoration={grocery.checked ? 'line-through' : 'none'}
         >
           {grocery.item}
-        </Text>
+        </Checkbox>
         <Spacer />
-        <ListIcon as={CloseIcon} cursor="pointer" onClick={handleDelete} />
+        <ListIcon as={CloseIcon} cursor="pointer" onClick={onDelete} />
       </HStack>
     </ListItem>
   ));
@@ -47,6 +43,6 @@ GroceryList.propTypes = {
       checked: PropTypes.bool,
     }),
   ).isRequired,
-  handleCheck: PropTypes.func.isRequired,
-  handleDelete: PropTypes.func.isRequired,
+  onCheck: PropTypes.func.isRequired,
+  onDelete: PropTypes.func.isRequired,
 };

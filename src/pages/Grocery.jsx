@@ -32,8 +32,8 @@ export default function Grocery() {
       {groceryList && (
         <GroceryList
           groceryList={groceryList}
-          handleCheck={handleCheck}
-          handleDelete={handleDelete}
+          onCheck={handleCheck}
+          onDelete={handleDelete}
         />
       )}
     </Container>
