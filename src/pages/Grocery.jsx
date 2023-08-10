@@ -1,6 +1,7 @@
 import { Container, Heading } from '@chakra-ui/react';
 import { useEffect, useState } from 'react';
 import GroceryList from '../components/grocery/GroceryList';
+import AddGroceryItemForm from '../components/grocery/AddGroceryItemForm';
 
 export default function Grocery() {
   const [groceryList, setGroceryList] = useState(null);
@@ -14,6 +15,10 @@ export default function Grocery() {
         setGroceryList(data);
       });
   }, []);
+
+  const handleAdd = (groceryItem) => {
+    alert(groceryItem);
+  };
 
   const handleCheck = (id) => {
     const updatedList = groceryList.map((grocery) => {
@@ -29,6 +34,8 @@ export default function Grocery() {
   return (
     <Container textAlign="center" maxW="container.lg">
       <Heading color="orange.500">Grocery List</Heading>
+      <AddGroceryItemForm onAdd={handleAdd} />
+      {!groceryList && 'No items'}
       {groceryList && (
         <GroceryList
           groceryList={groceryList}
