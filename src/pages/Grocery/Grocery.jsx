@@ -1,7 +1,7 @@
 import { Container, Heading } from '@chakra-ui/react';
 import { useEffect, useState } from 'react';
-import GroceryList from '../components/grocery/GroceryList';
-import AddGroceryItemForm from '../components/grocery/AddGroceryItemForm';
+import GroceryList from './Components/GroceryList/GroceryList';
+import AddGroceryItemForm from './Components/AddGroceryItemForm/AddGroceryItemForm';
 
 export default function Grocery() {
   const [groceryList, setGroceryList] = useState(null);
