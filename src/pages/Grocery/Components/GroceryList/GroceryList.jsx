@@ -23,7 +23,12 @@ export default function GroceryList({ groceryList, onCheck, onDelete }) {
           {grocery.item}
         </Checkbox>
         <Spacer />
-        <ListIcon as={CloseIcon} cursor="pointer" onClick={onDelete} />
+        <ListIcon
+          as={CloseIcon}
+          role="img"
+          cursor="pointer"
+          onClick={onDelete}
+        />
       </HStack>
     </ListItem>
   ));
